@@ -8,26 +8,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <img src="https://scontent.feoh2-1.fna.fbcdn.net/v/t39.30808-6/338752355_3550472161862047_3696788080554263025_n.png?_nc_cat=110&ccb=1-7&_nc_sid=783fdb&_nc_ohc=hA4dBAFz_64AX8eolkG&_nc_ht=scontent.feoh2-1.fna&oh=00_AfAWL0rFq5Q3Ru7H431p6HUbnZl3ZxB5aDznKkevyQlZrg&oe=65BD7593" alt="" />
     </>
   )
 }
