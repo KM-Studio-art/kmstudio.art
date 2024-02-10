@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import logo from "../assets/images/logo.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,13 +8,17 @@ const movilWidth = 1000;
 const MainContainer = styled.div`
   width: 100%;
   height: 80px;
-  border-bottom: 0.1px solid #d3d3d3;
+  border-bottom: 0.1px solid #ffffff;
   display: flex;
   justify-content: center;
   font-size: 22px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
 
   @media only screen and (min-width: 1000px) {
-    Nav {
+    .nav {
+      width: 60%;
     }
   }
 `;
@@ -23,7 +26,6 @@ const MainContainer = styled.div`
 const Hamburger = styled.button``;
 
 const Nav = styled.div`
-  width: 60%;
   height: 100%;
 `;
 
@@ -66,11 +68,11 @@ export default function Navbar() {
   return (
     <MainContainer className="navbar navbar-expand-lg bg-body-tertiary">
       <Nav
-        className={`options-div ${
+        className={`nav ${
           screenWidth < movilWidth ? "container-fluid" : null
         }`}
       >
-        <Img className="navbar-brand" src={logo} alt="" />
+        <Img className="navbar-brand" src="src/assets/images/logo.png" alt="" />
         <Hamburger
           className="navbar-toggler"
           type="button"
