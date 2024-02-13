@@ -228,7 +228,8 @@ Error generating stack: `+o.message+`
     font-size: 40px;
   }
   img {
-    width: 80%;
+    width: 100%;
+    border: 2px solid white;
   }
 `,Dy=[T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/02-18.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/03-14.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/07-11.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/04-13.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/06-14.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/08-11.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/09-10.jpg",onDragStart:kt,role:"presentation"}),T.jsx("img",{src:"https://faizan-studio.com/wp-content/uploads/2021/11/01-22.jpg",onDragStart:kt,role:"presentation"})],jy={0:{items:1},568:{items:2},1024:{items:6}};function My(){return T.jsxs(Ny,{children:[T.jsx("h6",{className:"title",children:T.jsx("span",{children:"Our Services"})}),T.jsx(Oy,{mouseTracking:!0,infinite:!0,items:Dy,responsive:jy})]})}const Ry=dt.div`
   width: 100%;
