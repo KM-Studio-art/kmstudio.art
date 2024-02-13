@@ -4,42 +4,60 @@ import { FaBookOpen } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 
 const Section2Container = styled.div`
-  height: 37vh;
-  margin-top: 5%;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .c-card {
-    height: 100%;
-    width: 23%;
-    padding: 20px 12px;
-    background-color: #f4f5f4;
+  @media screen {
+    min-height: 37vh;
+    margin-top: 5%;
+    text-align: center;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .c-card {
+      height: inherit;
+      width: 23%;
+      padding: 20px 12px;
+      background-color: #f4f5f4;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .image-icon {
+      font-size: 35px;
+      color: #818181;
+    }
+    .title {
+      color: #494d5f;
+      font-size: 24px;
+    }
+    .text {
+      color: #999999;
+    }
+    button {
+      border-radius: 50px;
+      width: 50%;
+      border: 0px;
+      background: linear-gradient(to right, #d8d8d8, #6b6b6b);
+      height: fit-content;
+      color: white;
+      &:hover {
+        background: linear-gradient(to right, #f3afa0, #f75555);
+      }
+    }
   }
-  .image-icon {
-    font-size: 35px;
-    color: #818181;
+  @media screen and (width < 1440px) {
+    min-height: 34vh;
+    .c-card {
+      padding: 20px 60px;
+      width: 48%;
+      margin-top: 10px;
+    }
   }
-  .title {
-    color: #494d5f;
-    font-size: 24px;
-  }
-  .text {
-    color: #999999;
-  }
-  button {
-    border-radius: 50px;
-    width: 35%;
-    border: 0px;
-    background: linear-gradient(to right,#d8d8d8,#6b6b6b);
-    height: fit-content;
-    color: white;
-    &:hover{
-      background: linear-gradient(to right,#f3afa0,#f75555);
+  @media screen and (width < 667px) {
+    min-height: 30vh;
+    .c-card {
+      padding: 10px 30px;
+      width: 100%;
+      margin-top: 10px;
     }
   }
 `;
@@ -56,10 +74,11 @@ export default function Section2() {
         <button>Details &gt; </button>
       </div>
       <div className="c-card">
-      <FaUser className="image-icon"/>
+        <FaUser className="image-icon" />
         <h6 className="title">Upwork</h6>
         <p className="text">
-        Check my upwork profile and check portfolio you love them and read review about our work so you can get see our clients thoughts about us
+          Check my upwork profile and check portfolio you love them and read
+          review about our work so you can get see our clients thoughts about us
         </p>
         <button>Details &gt; </button>
       </div>

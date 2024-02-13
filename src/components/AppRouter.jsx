@@ -1,10 +1,11 @@
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Ohter from "./Ohter";
 import Err404 from "./Err404";
 import Home from "../views/Home/Home";
 import Navbar from "./Navbar";
 
+const StylesContext = createContext();
 export default function AppRouter() {
   return (
     <>

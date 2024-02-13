@@ -10,11 +10,12 @@ const MainContainer = styled.div`
   margin-top: 80px;
 `;
 
+
 export default function Home() {
   return (
     <MainContainer>
-      <Carousel/>
-      <Content/>
+      <Carousel />
+      <Content />
     </MainContainer>
   );
 }
