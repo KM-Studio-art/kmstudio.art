@@ -13,7 +13,7 @@ const CarouselContainer = styled.div`
     height: 100%;
   }
   @media screen and (width < 667px) {
-    height: 20vh;
+    height: 30vh;
     .carousel,
     .carousel-inner,
     .carousel-item,

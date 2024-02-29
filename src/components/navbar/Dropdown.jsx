@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { MdOutlineFaceRetouchingNatural } from "react-icons/md";
 import { FaArrowTrendUp } from "react-icons/fa6";
@@ -6,6 +6,10 @@ import { PiBaby } from "react-icons/pi";
 import { BsBoxSeam } from "react-icons/bs";
 import { TbPhotoEdit } from "react-icons/tb";
 import { RiScissorsCutFill } from "react-icons/ri";
+
+const Container = styled.div`
+  background-color: white;
+`
 
 const Li = styled.li``;
 
@@ -39,76 +43,63 @@ const Ul = styled.ul`
   }
 `;
 export default function Dropdown() {
-  const [showItems, setShowItems] = useState(true);
   return (
-    <>
-      <Li>
-        <a
-          className="nav-link"
-          data-bs-toggle="dropdown"
-          aria-expanded="true"
-          onMouseOver={() => setShowItems(true)}
-          // onMouseOut={() => setShowItems(false)}
-        >
-          Services
-        </a>
-      </Li>
-      {showItems ? (
-        <Ul
-          // className="dropdown-menu"
-          onMouseOver={() => setShowItems(true)}
-          // onMouseOut={() => setShowItems(false)}
-        >
-          <div>
-            {" "}
-            <li>
-              <a href="#">
-                <MdOutlineFaceRetouchingNatural />
-                &nbsp;Portrait Retouching
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <FaArrowTrendUp />
-                &nbsp;High End Retouching
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <PiBaby />
-                &nbsp;Newborn editing
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <BsBoxSeam />
-                &nbsp;Product Editing
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <TbPhotoEdit />
-                &nbsp;Photo Manipulation
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <RiScissorsCutFill />
-                &nbsp;Clipping path
-              </a>
-            </li>
-            <li>
-              <a href="#">&nbsp;Jewellry Retouching</a>
-            </li>
-            <li>
-              <a href="#">&nbsp;Real Estate & Arcitacture</a>
-            </li>
-            <li>
-              <a href="#">&nbsp;Photo Restoration</a>
-            </li>
-          </div>
-        </Ul>
-      ) : null}
-    </>
+    <Container>
+      {" "}
+      <Ul
+        // className="dropdown-menu"
+        onMouseOver={() => setShowItems(true)}
+        // onMouseOut={() => setShowItems(false)}
+      >
+        <div>
+          {" "}
+          <li>
+            <a href="#">
+              <MdOutlineFaceRetouchingNatural />
+              &nbsp;Portrait Retouching
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <FaArrowTrendUp />
+              &nbsp;High End Retouching
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <PiBaby />
+              &nbsp;Newborn editing
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <BsBoxSeam />
+              &nbsp;Product Editing
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <TbPhotoEdit />
+              &nbsp;Photo Manipulation
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <RiScissorsCutFill />
+              &nbsp;Clipping path
+            </a>
+          </li>
+          <li>
+            <a href="#">&nbsp;Jewellry Retouching</a>
+          </li>
+          <li>
+            <a href="#">&nbsp;Real Estate & Arcitacture</a>
+          </li>
+          <li>
+            <a href="#">&nbsp;Photo Restoration</a>
+          </li>
+        </div>
+      </Ul>
+    </Container>
   );
 }

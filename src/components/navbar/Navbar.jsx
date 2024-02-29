@@ -43,6 +43,7 @@ const MainContainer = styled.div`
       width: 80%;
       .nav-link {
         width: 100%;
+        cursor: pointer;
       }
     }
   }
@@ -60,6 +61,8 @@ const MainContainer = styled.div`
 
 export default function Navbar() {
   const [screenWidth, setscreenWidth] = useState(window.innerWidth);
+  const [showDropdown, setShowDropdown] = useState(false);
+  console.log(showDropdown);
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,7 +120,10 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
+                <a
+                  className="nav-link"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
                   Services
                 </a>
               </li>
@@ -143,6 +149,7 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
+        {showDropdown ? <Dropdown/> : null}
       </div>
     </MainContainer>
   );
