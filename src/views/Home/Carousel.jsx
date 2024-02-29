@@ -12,6 +12,17 @@ const CarouselContainer = styled.div`
   .c-image {
     height: 100%;
   }
+  @media screen and (width < 667px) {
+    height: 20vh;
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .c-image {
+      object-fit: cover;
+      height: inherit;
+      overflow: hidden;
+    }
+  }
 `;
 export default function Carousel() {
   return (
@@ -44,21 +55,21 @@ export default function Carousel() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://i.ibb.co/4M3c6g3/carouselimg1.png"
+              src="https://kmstudio.s3.us-east-2.amazonaws.com/carousel/1.png"
               className="d-block w-100 c-image"
               alt="..."
             />
           </div>
           <div className="carousel-item">
             <img
-              src="https://i.ibb.co/GH5PGXh/carouselimg2.png"
+              src="https://kmstudio.s3.us-east-2.amazonaws.com/carousel/2.png"
               className="d-block w-100 c-image"
               alt="..."
             />
           </div>
           <div className="carousel-item">
             <img
-              src="https://i.ibb.co/R0qzX9H/carouselimg3.png"
+              src="https://kmstudio.s3.us-east-2.amazonaws.com/carousel/3.png"
               className="d-block w-100 c-image"
               alt="..."
             />
