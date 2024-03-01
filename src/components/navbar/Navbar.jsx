@@ -62,7 +62,6 @@ const MainContainer = styled.div`
 export default function Navbar() {
   const [screenWidth, setscreenWidth] = useState(window.innerWidth);
   const [showDropdown, setShowDropdown] = useState(false);
-  console.log(showDropdown);
 
   useEffect(() => {
     const handleResize = () => {
@@ -74,8 +73,12 @@ export default function Navbar() {
     };
   }, []);
 
+
   return (
-    <MainContainer className="navbar navbar-expand-lg bg-body-tertiary">
+    <MainContainer
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      onMouseLeave={() => setShowDropdown(false)}
+    >
       <div
         className={`nav ${
           screenWidth < movilWidthMd ? "container-fluid" : null
@@ -115,20 +118,29 @@ export default function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/"
+                  onMouseOver={() => setShowDropdown(false)}
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  onClick={() => setShowDropdown(!showDropdown)}
+                  onMouseOver={() => setShowDropdown(true)}
                 >
                   Services
                 </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link
+                  className="nav-link"
+                  to="#"
+                  onMouseOver={() => setShowDropdown(false)}
+                >
                   Example
                 </Link>
               </li>
@@ -149,7 +161,7 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-        {showDropdown ? <Dropdown/> : null}
+        {showDropdown ? <Dropdown showDropdown={showDropdown} /> : null}
       </div>
     </MainContainer>
   );

@@ -6,13 +6,11 @@ import { PiBaby } from "react-icons/pi";
 import { BsBoxSeam } from "react-icons/bs";
 import { TbPhotoEdit } from "react-icons/tb";
 import { RiScissorsCutFill } from "react-icons/ri";
+import "animate.css";
 
 const Container = styled.div`
   background-color: white;
-`
-
-const Li = styled.li``;
-
+`;
 const Ul = styled.ul`
   list-style: none;
   width: 100%;
@@ -22,7 +20,6 @@ const Ul = styled.ul`
     flex-wrap: wrap;
     align-items: center;
     li {
-      text-align: center;
       width: 33%;
       height: 80px;
       display: flex;
@@ -31,7 +28,6 @@ const Ul = styled.ul`
       a {
         font-size: 18px;
         color: #3f3f3f;
-        border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -42,15 +38,14 @@ const Ul = styled.ul`
     }
   }
 `;
-export default function Dropdown() {
+
+export default function Dropdown({ showHideAnimation }) {
   return (
-    <Container>
+    <Container
+      className="animate__animated animate__fadeIn animate__faster"
+    >
       {" "}
-      <Ul
-        // className="dropdown-menu"
-        onMouseOver={() => setShowItems(true)}
-        // onMouseOut={() => setShowItems(false)}
-      >
+      <Ul>
         <div>
           {" "}
           <li>
