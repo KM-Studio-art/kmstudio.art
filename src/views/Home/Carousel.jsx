@@ -28,7 +28,7 @@ export default function Carousel() {
   return (
     <CarouselContainer>
       {" "}
-      <div id="carouselExampleIndicators" className="carousel slide">
+      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button
             type="button"

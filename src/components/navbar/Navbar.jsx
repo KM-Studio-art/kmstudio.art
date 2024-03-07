@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import options from "./options.js";
 
 const movilWidthSm = 640;
 
@@ -25,6 +26,7 @@ const MainContainer = styled.div`
     img {
       height: 100%;
       float: left;
+      padding: 15px;
     }
     .items {
       padding: 1px;
@@ -44,7 +46,14 @@ const MainContainer = styled.div`
       .nav-link {
         width: 100%;
         cursor: pointer;
+
+        &:hover {
+          color: wheat;
+        }
       }
+    }
+    .invert-color {
+      filter: invert(100%);
     }
   }
   @media screen and (width < ${movilWidthMd}px) {
@@ -62,6 +71,7 @@ const MainContainer = styled.div`
 export default function Navbar() {
   const [screenWidth, setscreenWidth] = useState(window.innerWidth);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [dropdownOptions, setdropdownOptions] = useState([]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -73,6 +83,15 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleDropdownOptions = ({ target }) => {
+    const name = target.name;
+    if (name == "editing") {
+      setdropdownOptions(options[0]);
+    } else {
+      setdropdownOptions(options[1]);
+    }
+    setShowDropdown(true);
+  };
 
   return (
     <MainContainer
@@ -85,8 +104,8 @@ export default function Navbar() {
         }`}
       >
         <img
-          className="navbar-brand"
-          src="https://kmstudio.s3.us-east-2.amazonaws.com/logo-removebg-preview.png"
+          className="navbar-brand invert-color"
+          src="https://kmstudio.s3.us-east-2.amazonaws.com/logo.png"
           alt=""
         />
         <button
@@ -119,7 +138,7 @@ export default function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className="nav-link active"
+                  className="nav-link"
                   aria-current="page"
                   to="/"
                   onMouseOver={() => setShowDropdown(false)}
@@ -128,20 +147,23 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
+                  name="photography"
+                  to="/photography"
                   className="nav-link"
-                  onMouseOver={() => setShowDropdown(true)}
+                  onMouseOver={(target) => handleDropdownOptions(target)}
                 >
-                  Services
-                </a>
+                  Photography
+                </Link>
               </li>
               <li className="nav-item">
                 <Link
+                  name="editing"
+                  to="/editing"
                   className="nav-link"
-                  to="#"
-                  onMouseOver={() => setShowDropdown(false)}
+                  onMouseOver={(target) => handleDropdownOptions(target)}
                 >
-                  Example
+                  Editing
                 </Link>
               </li>
               <li className="nav-item">
@@ -149,19 +171,20 @@ export default function Navbar() {
                   className="nav-link"
                   href="https://www.upwork.com/freelancers/~01c9e8635fbf16b741"
                   target="blank"
+                  onMouseOver={() => setShowDropdown(false)}
                 >
                   Upwork
                 </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        {showDropdown ? <Dropdown showDropdown={showDropdown} /> : null}
+        {showDropdown ? <Dropdown options={dropdownOptions} /> : null}
       </div>
     </MainContainer>
   );
