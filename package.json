@@ -13,6 +13,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@bugsnag/browser-performance": "^2.6.0",
+    "@bugsnag/js": "^7.23.0",
+    "@bugsnag/plugin-react": "^7.24.0",
     "@fontsource/mulish": "^5.0.16",
     "@reduxjs/toolkit": "^2.1.0",
     "animate.css": "^4.1.1",
