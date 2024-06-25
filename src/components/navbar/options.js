@@ -24,7 +24,7 @@ const options = [
   [
     {
       name: "Portrait Retouching",
-      icon: "https://kmstudio.s3.us-east-2.amazonaws.com/service_icon2.png",
+      icon: "https://kmstudio.s3.us-east-2.amazonaws.com/service_icon.png",
       url: "/eeee",
     },
     {
