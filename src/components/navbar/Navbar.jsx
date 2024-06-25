@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import options from "./options.js";
-import Bugsnag from "@bugsnag/js";
 
 const movilWidthSm = 640;
 
